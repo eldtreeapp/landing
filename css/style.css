@@ -1,0 +1,309 @@
+/* ============================================
+   Eldtree Landing — Retro Dark Theme
+   ============================================ */
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0e0f0c;
+  --bg-card: #161713;
+  --text: #c8c3b4;
+  --text-muted: #7a7668;
+  --accent: #8faa5c;
+  --accent-hover: #a3bf70;
+  --border: #2a2b25;
+  --input-bg: #1a1b17;
+  --error: #c45c5c;
+  --success: #5c8f5c;
+  --font-mono: "IBM Plex Mono", "Fira Code", "SF Mono", "Cascadia Code", monospace;
+  --font-serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-mono);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Film Grain Overlay --- */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* --- Main Layout --- */
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 3rem;
+}
+
+/* --- Hero --- */
+.hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.logo {
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+.logo svg {
+  width: 48px;
+  height: 48px;
+}
+
+h1 {
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: var(--text);
+  text-transform: lowercase;
+  opacity: 0;
+  animation: fadeIn 1s ease 0.2s forwards;
+}
+
+.tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  opacity: 0;
+  animation: fadeIn 1s ease 0.4s forwards;
+}
+
+/* --- Principles --- */
+.principles {
+  margin-bottom: 4rem;
+  opacity: 0;
+  animation: fadeIn 1s ease 0.6s forwards;
+}
+
+.principle {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.principle:last-child {
+  border-bottom: none;
+}
+
+.principle-icon {
+  color: var(--accent);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.principle p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.principle strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* --- Waitlist --- */
+.waitlist {
+  margin-bottom: 4rem;
+  opacity: 0;
+  animation: fadeIn 1s ease 0.8s forwards;
+}
+
+.waitlist h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.waitlist-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.waitlist-form {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.form-group input {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 0.75rem 1rem;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input::placeholder {
+  color: var(--text-muted);
+}
+
+.form-group input:focus {
+  border-color: var(--accent);
+}
+
+.form-group button {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.form-group button:hover {
+  background: var(--accent-hover);
+}
+
+.form-group button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Honeypot — hidden from real users */
+#website {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}
+
+.form-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+}
+
+.form-message {
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 3px;
+}
+
+.form-message.success {
+  color: var(--success);
+  background: rgba(92, 143, 92, 0.1);
+  border: 1px solid rgba(92, 143, 92, 0.2);
+}
+
+.form-message.error {
+  color: var(--error);
+  background: rgba(196, 92, 92, 0.1);
+  border: 1px solid rgba(196, 92, 92, 0.2);
+}
+
+/* --- Manifesto --- */
+.manifesto {
+  margin-bottom: 4rem;
+  opacity: 0;
+  animation: fadeIn 1s ease 1s forwards;
+}
+
+.manifesto blockquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  border-left: 2px solid var(--accent);
+  padding-left: 1.25rem;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  opacity: 0;
+  animation: fadeIn 1s ease 1.2s forwards;
+}
+
+footer p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Responsive --- */
+@media (max-width: 480px) {
+  main {
+    padding: 3rem 1.25rem 2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .form-group {
+    flex-direction: column;
+  }
+
+  .form-group button {
+    width: 100%;
+  }
+}

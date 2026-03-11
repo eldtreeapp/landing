@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eldtree — A slower kind of social</title>
+  <meta name="description" content="No ads. No algorithms. No tracking. One invite per person, forever. Join the waitlist for a social platform that respects your time and your privacy.">
+  <meta property="og:title" content="Eldtree — A slower kind of social">
+  <meta property="og:description" content="No ads. No algorithms. No tracking. One invite per person, forever.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eldtree.net">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="grain"></div>
+
+  <main>
+    <header class="hero">
+      <div class="logo">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M24 4 L24 44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M24 20 L14 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M24 16 L34 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M24 28 L12 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M24 24 L36 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M24 34 L16 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M24 32 L32 26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h1>eldtree</h1>
+      <p class="tagline">A slower kind of social</p>
+    </header>
+
+    <section class="principles">
+      <div class="principle">
+        <span class="principle-icon">~</span>
+        <p>No ads. No tracking. No data sales. <strong>Non-negotiable.</strong></p>
+      </div>
+      <div class="principle">
+        <span class="principle-icon">~</span>
+        <p>No algorithms. No infinite scroll. <strong>Chronological, always.</strong></p>
+      </div>
+      <div class="principle">
+        <span class="principle-icon">~</span>
+        <p>One invite per person, forever. <strong>You tend your branch.</strong></p>
+      </div>
+      <div class="principle">
+        <span class="principle-icon">~</span>
+        <p>You own your data. You can delete your data. <strong>No dark patterns.</strong></p>
+      </div>
+    </section>
+
+    <section class="waitlist">
+      <h2>The garden is growing.</h2>
+      <p class="waitlist-text">The first 1,000 members get in free — forever. Leave your email and we'll let you know when the doors open.</p>
+
+      <form id="waitlist-form" class="waitlist-form">
+        <!-- Honeypot — invisible to users, bots fill it in -->
+        <input type="text" name="website" id="website" autocomplete="off" tabindex="-1" aria-hidden="true">
+        <div class="form-group">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="you@example.com"
+            required
+            autocomplete="email"
+            aria-label="Email address"
+          >
+          <button type="submit" id="submit-btn">
+            <span class="btn-text">Join the waitlist</span>
+            <span class="btn-loading" hidden>...</span>
+          </button>
+        </div>
+        <p class="form-note">No spam. One email when we launch. That's it.</p>
+        <div id="form-message" class="form-message" hidden></div>
+      </form>
+    </section>
+
+    <section class="manifesto">
+      <blockquote>
+        "Social media was supposed to connect us. Instead it optimized for engagement, sold our attention, and turned conversation into content. We think there's a better way — slower, quieter, and owned by the people who use it."
+      </blockquote>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Eldtree &middot; Built with patience</p>
+    </footer>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

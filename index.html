@@ -57,17 +57,15 @@
       <form id="waitlist-form" class="waitlist-form">
         <!-- Honeypot — invisible to users, bots fill it in -->
         <input type="text" name="website" id="website" autocomplete="off" tabindex="-1" aria-hidden="true">
-        <div class="form-group">
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="you@example.com"
-            required
-            autocomplete="email"
-            aria-label="Email address"
-          >
-        </div>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="you@example.com"
+          required
+          autocomplete="email"
+          aria-label="Email address"
+        >
         <textarea
           name="reason"
           id="reason"
@@ -76,12 +74,10 @@
           rows="3"
           aria-label="Why do you want to join"
         ></textarea>
-        <div class="form-group">
-          <button type="submit" id="submit-btn">
-            <span class="btn-text">Join the waitlist</span>
-            <span class="btn-loading" hidden>...</span>
-          </button>
-        </div>
+        <button type="submit" id="submit-btn">
+          <span class="btn-text">Join the waitlist</span>
+          <span class="btn-loading" hidden>...</span>
+        </button>
         <p class="form-note">No spam. One email when we launch. That's it.</p>
         <div id="form-message" class="form-message" hidden></div>
       </form>

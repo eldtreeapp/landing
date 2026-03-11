@@ -162,76 +162,59 @@ h1 {
   padding: 1.5rem;
 }
 
-.form-group {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.form-group input {
-  flex: 1;
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  padding: 0.75rem 1rem;
-  background: var(--input-bg);
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  color: var(--text);
-  outline: none;
-  transition: border-color 0.2s ease;
-}
-
-.form-group input::placeholder {
-  color: var(--text-muted);
-}
-
-.form-group input:focus {
-  border-color: var(--accent);
-}
-
-.form-group button {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  padding: 0.75rem 1.25rem;
-  background: var(--accent);
-  color: var(--bg);
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  white-space: nowrap;
-  font-weight: 600;
-}
-
-.form-group button:hover {
-  background: var(--accent-hover);
-}
-
-.form-group button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.waitlist-form textarea {
+.waitlist-form input[type="email"],
+.waitlist-form textarea,
+.waitlist-form button {
   width: 100%;
   font-family: var(--font-mono);
   font-size: 0.85rem;
   padding: 0.75rem 1rem;
-  background: var(--input-bg);
   border: 1px solid var(--border);
   border-radius: 3px;
-  color: var(--text);
   outline: none;
-  resize: vertical;
-  margin-top: 0.5rem;
   transition: border-color 0.2s ease;
 }
 
+.waitlist-form input[type="email"],
+.waitlist-form textarea {
+  background: var(--input-bg);
+  color: var(--text);
+}
+
+.waitlist-form input[type="email"] {
+  margin-bottom: 0.5rem;
+}
+
+.waitlist-form textarea {
+  resize: vertical;
+  margin-bottom: 0.75rem;
+}
+
+.waitlist-form input::placeholder,
 .waitlist-form textarea::placeholder {
   color: var(--text-muted);
 }
 
+.waitlist-form input:focus,
 .waitlist-form textarea:focus {
   border-color: var(--accent);
+}
+
+.waitlist-form button {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.waitlist-form button:hover {
+  background: var(--accent-hover);
+}
+
+.waitlist-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 /* Honeypot — hidden from real users */
@@ -320,13 +303,5 @@ footer p {
 
   h1 {
     font-size: 2rem;
-  }
-
-  .form-group {
-    flex-direction: column;
-  }
-
-  .form-group button {
-    width: 100%;
   }
 }

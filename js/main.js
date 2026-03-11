@@ -1,8 +1,9 @@
 // Eldtree Waitlist — Google Apps Script integration
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxwRdQMDenquqgtfrwNIubne55ROdA2loXlvTjvxQIgCEaTgVDUIbdDvi1-CWMAQ3G57w/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxehL81iH7vyWNnCtUuS7rIxNZLQBOXc9zzLeVkokPoGY5kemrdUUwwe44XcK0FoWDPdQ/exec";
 
 const form = document.getElementById("waitlist-form");
 const emailInput = document.getElementById("email");
+const reasonInput = document.getElementById("reason");
 const honeypot = document.getElementById("website");
 const submitBtn = document.getElementById("submit-btn");
 const btnText = submitBtn.querySelector(".btn-text");
@@ -37,12 +38,13 @@ form.addEventListener("submit", async (e) => {
       method: "POST",
       mode: "no-cors",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({ email }),
+      body: new URLSearchParams({ email, reason: reasonInput.value.trim().slice(0, 500) }),
     });
 
     lastSubmit = Date.now();
     showMessage("You're on the list. We'll be in touch.", "success");
     emailInput.value = "";
+    reasonInput.value = "";
   } catch (err) {
     showMessage("Something went wrong. Try again.", "error");
   } finally {

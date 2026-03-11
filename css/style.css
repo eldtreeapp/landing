@@ -211,6 +211,29 @@ h1 {
   cursor: not-allowed;
 }
 
+.waitlist-form textarea {
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 0.75rem 1rem;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--text);
+  outline: none;
+  resize: vertical;
+  margin-top: 0.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.waitlist-form textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.waitlist-form textarea:focus {
+  border-color: var(--accent);
+}
+
 /* Honeypot — hidden from real users */
 #website {
   position: absolute;
